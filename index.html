@@ -3,129 +3,555 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forgenest Digital</title>
+  <title>Forgenest Digital - Professional Web Development & Hosting Solutions</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+    * {
       margin: 0;
       padding: 0;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    /* Navigation/Header */
     header {
-      background: #1a1a1a;
+      background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
       color: #fff;
-      padding: 30px 20px;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 82, 204, 0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
+      color: #fff;
+      padding: 80px 20px;
       text-align: center;
     }
-    section {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+
+    .hero-container {
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    h2 {
-      color: #222;
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      opacity: 0.95;
     }
-    ul li {
-      background: #eaeaea;
-      margin: 8px 0;
-      padding: 10px;
+
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #0052cc;
+      padding: 14px 40px;
       border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
     }
-    .contact {
-      margin-top: 20px;
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 20px;
+    }
+
+    section h2 {
+      font-size: 36px;
+      color: #0052cc;
+      text-align: center;
+      margin-bottom: 50px;
+      font-weight: 700;
+    }
+
+    section h3 {
+      color: #0052cc;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    /* About Section */
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 82, 204, 0.08);
+    }
+
+    .about-content p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 15px rgba(0, 82, 204, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0, 82, 204, 0.15);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-card-content {
+      padding: 25px;
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Features List */
+    .features-list {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #f0f4ff;
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid #0052cc;
+    }
+
+    .features-list ul {
+      list-style: none;
+    }
+
+    .features-list li {
+      padding: 12px 0;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .features-list li:before {
+      content: "✓ ";
+      color: #0052cc;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Contact Section */
+    .contact-info {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .contact-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 15px rgba(0, 82, 204, 0.08);
+    }
+
+    .contact-card-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+      margin-top: 0;
+    }
+
+    .contact-card a {
+      color: #0052cc;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Form Section */
     .form-section {
       background: #fff;
-      padding: 25px;
+      padding: 40px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 40px;
+      box-shadow: 0 2px 15px rgba(0, 82, 204, 0.08);
+      max-width: 700px;
+      margin: 0 auto;
     }
-    input, select {
+
+    .form-section h2 {
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
+      border: 1px solid #ddd;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
     }
-    button {
-      background: #1a1a1a;
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #0052cc;
+      box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-section button {
+      background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
       color: #fff;
-      padding: 12px 20px;
+      padding: 14px 40px;
       border: none;
       border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
     }
-    button:hover {
-      background: #444;
+
+    .form-section button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 82, 204, 0.2);
     }
+
+    /* Footer */
     footer {
-      background: #1a1a1a;
-      color: #ccc;
+      background: #1a2332;
+      color: #fff;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9em;
+      padding: 40px 20px;
+      margin-top: 60px;
     }
-    a {
-      color: #0066cc;
+
+    footer p {
+      margin: 10px 0;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #6ba3ff;
       text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .footer-divider {
+      margin: 20px 0;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section h2 {
+        font-size: 28px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-content {
+        padding: 25px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <h1>Forgenest Digital</h1>
-    <p>Front-End | Back-End | Full Stack Projects for Companies</p>
+    <div class="header-container">
+      <div class="logo">Forgenest Digital</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#consultation">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>Domain Purchase</li>
-      <li>Website Development</li>
-      <li>Website Hosting</li>
-    </ul>
-    <div class="contact">
-      <p>📞 +351 963 516 036</p>
-      <p>📧 <a href="mailto:mreugene233@gmail.com">mreugene233@gmail.com</a></p>
-      <p>🌐 Service strictly online</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <h1>Professional Website Solutions for Your Business</h1>
+      <p>From domain registration to hosting and development, we create stunning websites that drive results</p>
+      <a href="#consultation" class="cta-button">Book a Consultation</a>
     </div>
   </section>
 
-  <section class="form-section">
-    <h2>Book a Consultation</h2>
-    <form action="https://formspree.io/f/https://formspree.io/f/mldoqylw" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" required />
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" name="phone" required />
-
-      <label for="location">Country and City</label>
-      <input type="text" name="location" required />
-
-      <label for="service">Service Interested In</label>
-      <select name="service" required>
-        <option value="">-- Select --</option>
-        <option value="Web Development">Web Development</option>
-        <option value="Front-End Development">Front-End Development</option>
-        <option value="Back-End Development">Back-End Development</option>
-        <option value="Full Stack Development">Full Stack Development</option>
-      </select>
-
-      <button type="submit">Submit</button>
-    </form>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Forgenest Digital</h2>
+      <div class="about-content">
+        <p>At Forgenest Digital, we specialize in helping IT customers create professional websites from scratch. Whether you need a complete web presence or are looking to establish your online identity, we offer comprehensive services including domain purchase, website development, and reliable hosting solutions.</p>
+        <p>Our team is dedicated to delivering high-quality, scalable web solutions tailored to your business needs. We provide end-to-end services that transform your vision into a powerful online presence.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <!-- Website Development -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop" alt="Website Development">
+          <div class="service-card-content">
+            <h3>Website Development</h3>
+            <p>We create responsive, modern websites built with the latest technologies. From front-end design to back-end development, we deliver complete web solutions tailored to your business requirements.</p>
+          </div>
+        </div>
+
+        <!-- Web Hosting -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop" alt="Web Hosting">
+          <div class="service-card-content">
+            <h3>Web Hosting</h3>
+            <p>Fast, reliable, and secure hosting solutions for your website. We provide 24/7 uptime monitoring, regular backups, and dedicated support to keep your site running smoothly.</p>
+          </div>
+        </div>
+
+        <!-- Domain Purchase -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="Domain Registration">
+          <div class="service-card-content">
+            <h3>Domain Purchase & Registration</h3>
+            <p>Register your perfect domain name with our simple and fast registration process. We help you find the ideal domain and manage all technical requirements securely.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="features-list">
+        <h3 style="margin-top: 0;">Why Choose Us?</h3>
+        <ul>
+          <li>Complete end-to-end solution from domain to deployment</li>
+          <li>Professional website design and development</li>
+          <li>Fast, secure, and reliable hosting infrastructure</li>
+          <li>24/7 customer support and technical assistance</li>
+          <li>Affordable pricing packages for all business sizes</li>
+          <li>SEO-optimized websites for better visibility</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <h3>Phone</h3>
+          <p><a href="tel:+351963516036">+351 963 516 036</a></p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <h3>Email</h3>
+          <p><a href="mailto:mreugene233@gmail.com">mreugene233@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🌐</div>
+          <h3>Website</h3>
+          <p><a href="https://forgenestdigital.org" target="_blank">forgenestdigital.org</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation Form Section -->
+  <section id="consultation">
+    <div class="container">
+      <h2>Book a Consultation</h2>
+      <div class="form-section">
+        <form action="https://formspree.io/f/mldoqylw" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" required placeholder="New York">
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <input type="text" id="country" name="country" required placeholder="United States">
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Interested In *</label>
+            <select id="service" name="service" required>
+              <option value="">-- Select a Service --</option>
+              <option value="Website Development">Website Development</option>
+              <option value="Web Hosting">Web Hosting</option>
+              <option value="Domain Purchase">Domain Purchase</option>
+              <option value="Complete Package">Complete Package (Domain + Development + Hosting)</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" placeholder="Tell us more about your project..."></textarea>
+          </div>
+
+          <button type="submit">Book Consultation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© All rights reserved — <a href="https://Forgenestdigital.org">Forgenestdigital.org</a></p>
+    <p><strong>Forgenest Digital</strong></p>
+    <p>Professional Web Development & Hosting Solutions</p>
+    <div class="footer-divider">─────────────────</div>
+    <p>📞 <a href="tel:+351963516036">+351 963 516 036</a> | 📧 <a href="mailto:mreugene233@gmail.com">mreugene233@gmail.com</a></p>
+    <p>🌐 <a href="https://forgenestdigital.org" target="_blank">forgenestdigital.org</a></p>
+    <div class="footer-divider">─────────────────</div>
+    <p>© 2025 Forgenest Digital. All rights reserved.</p>
   </footer>
 
 </body>
