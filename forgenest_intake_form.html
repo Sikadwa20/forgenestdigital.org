@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forgenest Digital | Client Intake Form</title>
+  <link rel="icon" type="image/png" href="forgenest-logo-final.png" />
+  <link rel="apple-touch-icon" href="forgenest-logo-final.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,6 +37,15 @@
         linear-gradient(160deg, #050505 0%, #0d0d0d 45%, #111111 100%);
       color: var(--text);
       min-height: 100vh;
+    }
+
+    .form-logo {
+      height: 56px;
+      width: auto;
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 5px;
+      box-shadow: 0 16px 30px rgba(0,0,0,0.22);
     }
 
     .gold-text {
@@ -100,13 +111,9 @@
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(244,201,93,0.14),_transparent_28%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.05),_transparent_25%)]"></div>
         <div class="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-yellow-300/20 bg-yellow-300/10 px-4 py-2 text-sm font-medium text-yellow-100/90">
-              <span class="flex h-10 w-10 items-center justify-center rounded-full border border-yellow-300/30 bg-black/40 text-lg font-extrabold text-yellow-300">F</span>
-              <div>
-                <div class="font-semibold tracking-[0.2em] text-yellow-200">FORGENEST DIGITAL</div>
-                <div class="text-xs text-yellow-100/70">Web design for ambitious small businesses</div>
-              </div>
-            </div>
+            <a href="forgenest_index.html#top" class="mb-6 inline-flex items-center" aria-label="Forgenest Digital home">
+              <img class="form-logo" src="forgenest-logo-final.png" alt="Forgenest Digital logo" />
+            </a>
             <h1 class="max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
               Professional website planning starts with a
               <span class="gold-text">clear brief</span>.

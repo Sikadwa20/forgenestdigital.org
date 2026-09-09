@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forgenest Digital | Professional Websites for Small Businesses</title>
   <meta name="description" content="Forgenest Digital helps small businesses launch professional websites without the stress, confusion, or agency price tag." />
+  <link rel="icon" type="image/png" href="forgenest-logo-final.png" />
+  <link rel="apple-touch-icon" href="forgenest-logo-final.png" />
   <style>
     :root {
       --bg: #08111f;
@@ -115,17 +117,22 @@
       letter-spacing: -0.02em;
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(217,164,65,0.22), rgba(255,255,255,0.08));
-      border: 1px solid rgba(255,255,255,0.14);
-      color: var(--gold-2);
-      font-weight: 800;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    .brand-logo {
+      height: 46px;
+      width: auto;
+      border-radius: 10px;
+      background: var(--white);
+      padding: 4px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .footer-logo {
+      height: 54px;
+      width: auto;
+      border-radius: 12px;
+      background: var(--white);
+      padding: 5px;
+      margin-bottom: 14px;
     }
 
     .nav-toggle {
@@ -718,8 +725,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Forgenest Digital home">
-        <span class="brand-mark">FD</span>
-        <span>Forgenest Digital</span>
+        <img class="brand-logo" src="forgenest-logo-final.png" alt="Forgenest Digital logo" />
       </a>
       <div class="nav-right">
         <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
@@ -1170,7 +1176,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-title">Forgenest Digital</div>
+          <a href="#top" aria-label="Forgenest Digital home">
+            <img class="footer-logo" src="forgenest-logo-final.png" alt="Forgenest Digital logo" />
+          </a>
           <p>Professional websites for small businesses</p>
           <p>Lisbon, Portugal</p>
         </div>
