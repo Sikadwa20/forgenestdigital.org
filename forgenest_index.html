@@ -392,6 +392,19 @@
       top: 0;
     }
 
+    .package-price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .package-cta {
+      margin-top: 24px;
+      width: 100%;
+      text-align: center;
+    }
+
     .portfolio-card {
       display: flex;
       flex-direction: column;
@@ -741,16 +754,55 @@
           </div>
           <div class="hero-note">Affordable websites for small businesses in Portugal and beyond</div>
         </div>
-        <aside class="hero-card">
-          <div class="mini-label">What you get</div>
-          <h3>A website that makes your business feel more credible</h3>
-          <p>Clear guidance, friendly communication, and modern design — all handled in a simple, practical way for small business owners.</p>
-          <ul class="hero-list">
-            <li>Clean, mobile-friendly website design</li>
-            <li>Domain and hosting setup support</li>
-            <li>Affordable pricing compared to larger agencies</li>
-            <li>Personal, 1-to-1 service from Eugene in Lisbon</li>
-          </ul>
+        <aside class="hero-visual">
+          <svg viewBox="0 0 800 600" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="border-radius: 28px; box-shadow: var(--shadow); background: linear-gradient(135deg, rgba(16,29,54,0.95), rgba(10,18,34,0.95)); border: 1px solid rgba(255,255,255,0.09);">
+            <defs>
+              <linearGradient id="screen-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="rgba(217, 164, 65, 0.15)" />
+                <stop offset="100%" stop-color="rgba(82, 119, 201, 0.1)" />
+              </linearGradient>
+              <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#d9a441" />
+                <stop offset="100%" stop-color="#f0c56b" />
+              </linearGradient>
+            </defs>
+            <!-- Background Elements -->
+            <circle cx="650" cy="150" r="250" fill="rgba(217, 164, 65, 0.05)" />
+            <circle cx="150" cy="450" r="200" fill="rgba(82, 119, 201, 0.05)" />
+            <!-- Desk -->
+            <path d="M 0 520 L 800 520 L 800 600 L 0 600 Z" fill="#0b1426" />
+            <path d="M 0 520 L 800 520 L 800 535 L 0 535 Z" fill="#101d36" />
+            
+            <!-- Monitor -->
+            <rect x="200" y="150" width="400" height="250" rx="12" fill="#080e1a" stroke="#1d2b4d" stroke-width="4"/>
+            <rect x="215" y="165" width="370" height="220" rx="6" fill="url(#screen-glow)"/>
+            <rect x="215" y="165" width="370" height="220" rx="6" fill="#0d1830"/>
+            <!-- Monitor Stand -->
+            <path d="M 370 400 L 430 400 L 440 500 L 360 500 Z" fill="#1d2b4d" />
+            <rect x="320" y="490" width="160" height="10" rx="5" fill="#2a3c66" />
+            
+            <!-- Code on Screen -->
+            <rect x="235" y="190" width="180" height="8" rx="4" fill="#354e85"/>
+            <rect x="235" y="210" width="120" height="8" rx="4" fill="#d9a441"/>
+            <rect x="255" y="230" width="220" height="8" rx="4" fill="#758fcc"/>
+            <rect x="255" y="250" width="160" height="8" rx="4" fill="#758fcc"/>
+            <rect x="275" y="270" width="190" height="8" rx="4" fill="#758fcc"/>
+            <rect x="235" y="290" width="140" height="8" rx="4" fill="#f0c56b"/>
+            <rect x="235" y="310" width="90" height="8" rx="4" fill="#354e85"/>
+            
+            <!-- Human / Coder (Stylized Silhouette) -->
+            <path d="M 520 600 C 520 480 480 410 400 410 C 320 410 280 480 280 600 Z" fill="#1a2b54" />
+            <path d="M 500 600 C 500 500 460 430 400 430 C 340 430 300 500 300 600 Z" fill="#24386b" />
+            <!-- Head / Hoodie -->
+            <circle cx="400" cy="350" r="55" fill="#1a2b54" />
+            <circle cx="400" cy="355" r="45" fill="#24386b" />
+            
+            <!-- Plant -->
+            <rect x="120" y="440" width="40" height="80" rx="6" fill="#152445" />
+            <path d="M 120 440 Q 140 400 160 440" fill="none" stroke="#d9a441" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 140 440 Q 150 410 170 430" fill="none" stroke="#758fcc" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 110 450 Q 130 420 140 450" fill="none" stroke="#d9a441" stroke-width="4" stroke-linecap="round"/>
+          </svg>
         </aside>
       </div>
     </section>
@@ -789,51 +841,48 @@
         <div class="grid-3">
           <article class="card package">
             <span class="tag">Starter</span>
-            <h3>Starter Website Package</h3>
-            <p>Perfect for small businesses that need a clean online presence and want to look professional from day one.</p>
+            <div class="package-price">€299</div>
+            <h3>Starter</h3>
             <ul>
-              <li>1–3 page website</li>
-              <li>Mobile-friendly design</li>
+              <li>Single page website</li>
+              <li>Mobile responsive</li>
               <li>Contact form</li>
-              <li>Basic SEO setup</li>
-              <li>Domain connection</li>
-              <li>Hosting setup guidance</li>
-              <li>WhatsApp, phone, email, or social links</li>
+              <li>Social media links</li>
+              <li>3 revisions</li>
+              <li>Delivered in 5 days</li>
             </ul>
-            <p><strong>Best for:</strong> New businesses, freelancers, personal brands, and local service providers</p>
+            <a class="btn btn-secondary package-cta" href="#contact">Get Started</a>
           </article>
           <article class="card package">
-            <span class="tag">Business</span>
-            <h3>Business Website Package</h3>
-            <p>A more complete website for businesses that want to build trust, explain their services clearly, and generate more enquiries.</p>
+            <span class="tag" style="background: rgba(217,164,65,0.2);">Business</span>
+            <div class="package-price">€599</div>
+            <h3>Business</h3>
             <ul>
-              <li>4–8 page website</li>
-              <li>Custom design tailored to your business</li>
-              <li>Service pages</li>
-              <li>About page</li>
-              <li>Contact / enquiry form</li>
-              <li>Mobile optimisation</li>
-              <li>Basic SEO structure</li>
-              <li>Domain and hosting setup</li>
-              <li>Guidance on content and layout</li>
+              <li>Up to 5 pages</li>
+              <li>Mobile responsive</li>
+              <li>Booking/contact form</li>
+              <li>Google Maps integration</li>
+              <li>WhatsApp button</li>
+              <li>SEO basics</li>
+              <li>5 revisions</li>
+              <li>Delivered in 7 days</li>
             </ul>
-            <p><strong>Best for:</strong> Growing businesses that want a more established, credible online presence</p>
+            <a class="btn btn-primary package-cta" href="#contact">Get Started</a>
           </article>
           <article class="card package">
             <span class="tag">Premium</span>
-            <h3>Complete Website Launch Package</h3>
-            <p>Everything you need to go from “I need a website” to a finished professional online presence — handled in one place.</p>
+            <div class="package-price">€999</div>
+            <h3>Premium</h3>
             <ul>
-              <li>Domain guidance or setup</li>
-              <li>Website design and build</li>
-              <li>Hosting setup</li>
-              <li>Mobile-friendly pages</li>
-              <li>Contact forms</li>
-              <li>SEO basics</li>
-              <li>Launch support</li>
-              <li>Post-launch guidance</li>
+              <li>Full custom website</li>
+              <li>Admin dashboard / CMS</li>
+              <li>Online booking or payment integration</li>
+              <li>Google Analytics</li>
+              <li>Unlimited revisions</li>
+              <li>Delivered in 14 days</li>
+              <li>1 month free support</li>
             </ul>
-            <p><strong>Best for:</strong> Anyone who wants a complete done-for-you website solution</p>
+            <a class="btn btn-secondary package-cta" href="#contact">Get Started</a>
           </article>
         </div>
         <div class="card" style="margin-top:22px;">
