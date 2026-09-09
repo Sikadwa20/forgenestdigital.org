@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgenest Digital | Client Intake Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: rgba(24, 24, 24, 0.9);
+      --panel-border: rgba(255, 215, 102, 0.18);
+      --text: #f8f5ef;
+      --muted: #b6b1a5;
+      --gold: #f4c95d;
+      --gold-strong: #ffcf52;
+      --gold-soft: rgba(244, 201, 93, 0.18);
+      --input: rgba(255,255,255,0.04);
+      --success-bg: rgba(39, 70, 46, 0.55);
+      --success-border: rgba(120, 211, 135, 0.35);
+      --success-text: #dcffe3;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(244, 201, 93, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 207, 82, 0.08), transparent 22%),
+        linear-gradient(160deg, #050505 0%, #0d0d0d 45%, #111111 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .gold-text {
+      background: linear-gradient(135deg, #fff0b8 0%, #f4c95d 40%, #d8a83a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(27,27,27,0.95) 0%, rgba(18,18,18,0.88) 100%);
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
+    }
+
+    .field,
+    .choice-card {
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .field:focus,
+    .choice-card:hover {
+      border-color: rgba(244, 201, 93, 0.5);
+      box-shadow: 0 0 0 4px rgba(244, 201, 93, 0.08);
+      outline: none;
+    }
+
+    .choice-card:hover {
+      transform: translateY(-1px);
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      accent-color: var(--gold-strong);
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #ffe08a 0%, #f4c95d 42%, #dba93b 100%);
+      color: #111111;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      box-shadow: 0 20px 35px rgba(244, 201, 93, 0.2);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 24px 40px rgba(244, 201, 93, 0.28);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="min-h-screen px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <section class="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 px-6 py-10 shadow-2xl sm:px-10 lg:px-12">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(244,201,93,0.14),_transparent_28%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.05),_transparent_25%)]"></div>
+        <div class="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-yellow-300/20 bg-yellow-300/10 px-4 py-2 text-sm font-medium text-yellow-100/90">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full border border-yellow-300/30 bg-black/40 text-lg font-extrabold text-yellow-300">F</span>
+              <div>
+                <div class="font-semibold tracking-[0.2em] text-yellow-200">FORGENEST DIGITAL</div>
+                <div class="text-xs text-yellow-100/70">Web design for ambitious small businesses</div>
+              </div>
+            </div>
+            <h1 class="max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
+              Professional website planning starts with a
+              <span class="gold-text">clear brief</span>.
+            </h1>
+            <p class="mt-5 max-w-2xl text-base leading-7 text-stone-300 sm:text-lg">
+              Tell Eugene about your business, goals, style, and must-have features. This intake form helps turn your ideas into a polished website proposal faster.
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-yellow-300/10 bg-black/25 p-4">
+                <p class="text-sm font-semibold text-yellow-200">Tailored recommendation</p>
+                <p class="mt-2 text-sm text-stone-400">Get the right package and scope based on your real needs.</p>
+              </div>
+              <div class="rounded-2xl border border-yellow-300/10 bg-black/25 p-4">
+                <p class="text-sm font-semibold text-yellow-200">Faster turnaround</p>
+                <p class="mt-2 text-sm text-stone-400">Clear answers help move your project from inquiry to build without delays.</p>
+              </div>
+              <div class="rounded-2xl border border-yellow-300/10 bg-black/25 p-4">
+                <p class="text-sm font-semibold text-yellow-200">Professional planning</p>
+                <p class="mt-2 text-sm text-stone-400">Brand, pages, features, and timeline are all captured in one place.</p>
+              </div>
+            </div>
+          </div>
+          <div class="glass rounded-[28px] p-6 sm:p-8">
+            <div class="space-y-4">
+              <p class="text-sm uppercase tracking-[0.3em] text-yellow-200/80">Client onboarding</p>
+              <h2 class="text-2xl font-bold text-white">Let’s map out your website properly</h2>
+              <p class="text-sm leading-6 text-stone-400">Complete this short intake form and Eugene will review your project details, preferred package, pages, and features before following up.</p>
+            </div>
+            <div class="mt-6 grid gap-3 text-sm text-stone-300 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p class="font-semibold text-yellow-100">Ideal for</p>
+                <p class="mt-1 text-stone-400">New businesses, redesigns, service brands, rentals, portfolios, and online shops.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p class="font-semibold text-yellow-100">Response time</p>
+                <p class="mt-1 text-stone-400">You’ll receive a personal follow-up within 24 hours after submission.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-8 glass rounded-[32px] px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+        <div id="successMessage" class="mb-6 hidden rounded-2xl border px-5 py-4" style="background: var(--success-bg); border-color: var(--success-border); color: var(--success-text);">
+          <p class="text-base font-semibold">Thanks! Eugene will be in touch within 24 hours. 🚀</p>
+        </div>
+
+        <form id="intakeForm" class="space-y-10" novalidate>
+          <input type="hidden" name="_subject" value="New Forgenest Client Inquiry" />
+          <input type="hidden" name="_replyto" id="replyToField" value="" />
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Business details</h3>
+                <p class="mt-1 text-sm text-stone-400">Basic information so Eugene knows who to contact and what you do.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 1</span>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Full Name</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="full_name" required placeholder="Your full name" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Business Name</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="business_name" required placeholder="Your business name" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Email Address</span>
+                <input id="emailField" class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="email" name="email" required placeholder="you@example.com" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Phone / WhatsApp Number</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="tel" name="phone_whatsapp" placeholder="+351 ..." />
+              </label>
+              <label class="block md:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Website (if you have one already)</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="url" name="website" placeholder="https://yourwebsite.com" />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Project scope</h3>
+                <p class="mt-1 text-sm text-stone-400">Choose the website type, package, content needs, and preferred deadline.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 2</span>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">What type of website do you need?</span>
+                <select class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white" name="website_type" required>
+                  <option value="">Select an option</option>
+                  <option>Landing Page</option>
+                  <option>Business Website</option>
+                  <option>Booking/Rental Site</option>
+                  <option>Portfolio</option>
+                  <option>E-commerce</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Which package are you interested in?</span>
+                <select class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white" name="package_interest" required>
+                  <option value="">Select a package</option>
+                  <option>Starter €299</option>
+                  <option>Business €599</option>
+                  <option>Premium €999</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+              <label class="block md:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Briefly describe your business and what you do</span>
+                <textarea class="field min-h-[120px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" name="business_description" required placeholder="Tell us about your products, services, and what makes your business unique."></textarea>
+              </label>
+              <label class="block md:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Who are your target customers?</span>
+                <textarea class="field min-h-[110px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" name="target_customers" placeholder="Who are you trying to reach? Local clients, tourists, startups, families, specific industries, etc."></textarea>
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">What is your deadline / when do you need this done?</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="deadline" placeholder="e.g. In 2 weeks / Before 15 October" />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Brand and design</h3>
+                <p class="mt-1 text-sm text-stone-400">Share your existing brand assets and the style direction you want.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 3</span>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <fieldset class="md:col-span-2">
+                <legend class="mb-3 block text-sm font-medium text-stone-200">Do you have a logo?</legend>
+                <div class="grid gap-3 sm:grid-cols-3">
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="logo_status" value="Yes" />
+                    <span>Yes</span>
+                  </label>
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="logo_status" value="No" />
+                    <span>No</span>
+                  </label>
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="logo_status" value="Need one" />
+                    <span>Need one</span>
+                  </label>
+                </div>
+              </fieldset>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Do you have brand colours or a style in mind?</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="brand_style" placeholder="e.g. Luxury black and gold, modern, playful, minimal" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Any websites you like the look of?</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="inspiration_sites" placeholder="Add links or brand names for inspiration" />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Pages and features</h3>
+                <p class="mt-1 text-sm text-stone-400">Select what your website should include so the proposal is aligned from the start.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 4</span>
+            </div>
+            <div class="grid gap-5 lg:grid-cols-2">
+              <fieldset>
+                <legend class="mb-3 block text-sm font-medium text-stone-200">What pages do you need?</legend>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Home" /><span>Home</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="About" /><span>About</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Services" /><span>Services</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Booking/Contact" /><span>Booking/Contact</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Gallery" /><span>Gallery</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="FAQ" /><span>FAQ</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:col-span-2"><input type="checkbox" name="pages_needed" value="Other" /><span>Other</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend class="mb-3 block text-sm font-medium text-stone-200">Any special features needed?</legend>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="WhatsApp button" /><span>WhatsApp button</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Booking form" /><span>Booking form</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Google Maps" /><span>Google Maps</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Online payment" /><span>Online payment</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Photo gallery" /><span>Photo gallery</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Blog" /><span>Blog</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:col-span-2"><input type="checkbox" name="special_features" value="Other" /><span>Other</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Final notes</h3>
+                <p class="mt-1 text-sm text-stone-400">Anything else Eugene should know before reaching out?</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 5</span>
+            </div>
+            <div class="grid gap-5">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Any other notes or questions?</span>
+                <textarea class="field min-h-[140px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" name="notes_questions" placeholder="Share anything important about your goals, content, launch plans, or questions for Eugene."></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p class="max-w-xl text-sm leading-6 text-stone-400">By submitting this form, your project details will be sent directly to Forgenest Digital so Eugene can review your inquiry and follow up with the best next steps.</p>
+            <button id="submitButton" type="submit" class="submit-btn inline-flex items-center justify-center rounded-2xl px-7 py-4 text-base font-bold tracking-wide">
+              Send Intake Form
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('intakeForm');
+    const emailField = document.getElementById('emailField');
+    const replyToField = document.getElementById('replyToField');
+    const submitButton = document.getElementById('submitButton');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      replyToField.value = emailField.value.trim();
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      successMessage.classList.add('hidden');
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('https://formspree.io/f/mkjnpvdj', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Form submission failed.');
+        }
+
+        form.reset();
+        replyToField.value = '';
+        successMessage.classList.remove('hidden');
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('Sorry — something went wrong while sending your form. Please try again in a moment.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Intake Form';
+      }
+    });
+  </script>
+</body>
+</html>
