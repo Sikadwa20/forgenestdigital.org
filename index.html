@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=forgenest_intake_form.html" />
-  <title>Forgenest Digital Intake Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgenest Digital - Logo Previews</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f5;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        p.tagline {
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .preview-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .logo-card {
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-wrapper {
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .logo-wrapper img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        /* Checkered background to show transparency for the first image */
+        .bg-transparent {
+            background-image: 
+                linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                linear-gradient(-45deg, transparent 75%, #ccc 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-color: #eee;
+        }
+        .bg-dark {
+            background-color: #0D0D0D;
+        }
+        .bg-light {
+            background-color: #FFFFFF;
+        }
+        .label {
+            padding: 15px;
+            background: #fff;
+            border-top: 1px solid #eee;
+            font-weight: 600;
+        }
+    </style>
 </head>
-<body style="background:#0a0a0a;color:#f8f5ef;font-family:Inter,Arial,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;">
-  <p>Redirecting to the intake form...</p>
+<body>
+
+    <h1>Forgenest Digital</h1>
+    <p class="tagline">"Built for Business. Powered by AI."</p>
+
+    <div class="preview-container">
+        <!-- Transparent Logo -->
+        <div class="logo-card">
+            <div class="logo-wrapper bg-transparent">
+                <img src="forgenest-logo.png" alt="Transparent Logo">
+            </div>
+            <div class="label">Transparent Logo (forgenest-logo.png)</div>
+        </div>
+
+        <!-- Dark Logo -->
+        <div class="logo-card">
+            <div class="logo-wrapper bg-dark">
+                <img src="forgenest-logo-dark.png" alt="Dark Background Logo">
+            </div>
+            <div class="label">Dark Background (forgenest-logo-dark.png)</div>
+        </div>
+
+        <!-- Light Logo -->
+        <div class="logo-card">
+            <div class="logo-wrapper bg-light">
+                <img src="forgenest-logo-light.png" alt="Light Background Logo">
+            </div>
+            <div class="label">Light Background (forgenest-logo-light.png)</div>
+        </div>
+    </div>
+
 </body>
 </html>
