@@ -214,6 +214,7 @@
                   <option>Business Website</option>
                   <option>Booking/Rental Site</option>
                   <option>Portfolio</option>
+                  <option>Shopify / E-commerce Store</option>
                   <option>E-commerce</option>
                   <option>Other</option>
                 </select>
@@ -225,9 +226,23 @@
                   <option>Starter €299</option>
                   <option>Business €599</option>
                   <option>Premium €999</option>
+                  <option>Shopify Store Setup from €799</option>
                   <option>Not sure yet</option>
                 </select>
               </label>
+              <fieldset class="md:col-span-2">
+                <legend class="mb-3 block text-sm font-medium text-stone-200">Would you like a free Google Meet consultation first?</legend>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="google_meet_consultation" value="Yes" />
+                    <span>Yes, I’d like a free Google Meet call first</span>
+                  </label>
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="google_meet_consultation" value="No" />
+                    <span>No, please send me details by email first</span>
+                  </label>
+                </div>
+              </fieldset>
               <label class="block md:col-span-2">
                 <span class="mb-2 block text-sm font-medium text-stone-200">Briefly describe your business and what you do</span>
                 <textarea class="field min-h-[120px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" name="business_description" required placeholder="Tell us about your products, services, and what makes your business unique."></textarea>
