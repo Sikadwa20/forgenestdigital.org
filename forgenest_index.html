@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgenest Digital | Professional Websites for Small Businesses</title>
+  <meta name="description" content="Forgenest Digital helps small businesses launch professional websites without the stress, confusion, or agency price tag." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="forgenest-logo-final.jpg" />
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-soft: #0d1830;
+      --panel: rgba(14, 25, 47, 0.82);
+      --panel-strong: #101d36;
+      --text: #f5f7fb;
+      --muted: #b7c2d9;
+      --line: rgba(255,255,255,0.1);
+      --gold: #d9a441;
+      --gold-2: #f0c56b;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --max: 1180px;
+      --nav-h: 76px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(217,164,65,0.14), transparent 30%),
+        radial-gradient(circle at top right, rgba(82,119,201,0.12), transparent 25%),
+        linear-gradient(180deg, #07101d 0%, #0a1426 35%, #09111f 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+      scroll-margin-top: calc(var(--nav-h) + 24px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(240,197,107,0.24);
+      background: rgba(217,164,65,0.08);
+      color: var(--gold-2);
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(217,164,65,0.65);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 17, 31, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo {
+      height: 46px;
+      width: auto;
+      border-radius: 10px;
+      background: var(--white);
+      padding: 4px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .footer-logo {
+      height: 54px;
+      width: auto;
+      border-radius: 12px;
+      background: var(--white);
+      padding: 5px;
+      margin-bottom: 14px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #1a1407 !important;
+      font-weight: 700;
+      box-shadow: 0 12px 24px rgba(217,164,65,0.25);
+    }
+
+    .hero {
+      padding: 78px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 12ch;
+    }
+
+    .hero-copy .subheadline {
+      margin: 0 0 18px;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      color: #dbe3f3;
+      max-width: 58ch;
+    }
+
+    .hero-copy .body {
+      color: var(--muted);
+      font-size: 1.03rem;
+      max-width: 62ch;
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #171106;
+      box-shadow: 0 14px 34px rgba(217,164,65,0.25);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+    }
+
+    .hero-note {
+      color: var(--gold-2);
+      font-size: 0.96rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(16,29,54,0.92), rgba(10,18,34,0.92));
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -50px -70px auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(217,164,65,0.25), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-card .mini-label {
+      color: var(--gold-2);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.65rem;
+    }
+
+    .hero-card p {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-list li {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stats {
+      padding: 26px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--gold-2);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .trust-line {
+      margin-top: 18px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .grid-4, .grid-3, .grid-2, .grid-steps, .faq-list, .footer-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-steps { grid-template-columns: repeat(5, 1fr); }
+    .faq-list { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1.2fr 1fr 1fr 1fr; }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .card h3, .card h4 { margin-top: 0; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p { color: var(--muted); }
+
+    .package {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .package::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .package .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(217,164,65,0.1);
+      color: var(--gold-2);
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+
+    .package ul, .bullet-list, .process-list, .footer-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .package li, .bullet-list li, .footer-list li {
+      color: #dce4f5;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .package li::before, .bullet-list li::before, .footer-list li::before {
+      content: "•";
+      color: var(--gold-2);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .package-price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .package-cta {
+      margin-top: 24px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .portfolio-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 100%;
+    }
+
+    .portfolio-media {
+      border-radius: 18px;
+      min-height: 210px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(217,164,65,0.16), rgba(53,84,143,0.3));
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-media::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -25% auto;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 65%);
+    }
+
+    .portfolio-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-media strong {
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-actions a {
+      color: var(--gold-2);
+      font-weight: 700;
+    }
+
+    .why-grid .card {
+      height: 100%;
+    }
+
+    .process-step {
+      min-height: 100%;
+      padding-top: 76px;
+      position: relative;
+    }
+
+    .process-step .step-number {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #181205;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .about-photo {
+      border-radius: 26px;
+      min-height: 100%;
+      background: linear-gradient(160deg, rgba(217,164,65,0.16), rgba(16,29,54,0.95));
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-photo::before {
+      content: "E";
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      color: rgba(255,255,255,0.05);
+    }
+
+    .about-photo .location {
+      color: var(--gold-2);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-note {
+      margin-bottom: 22px;
+      color: var(--muted);
+    }
+
+    .quote {
+      font-size: 1.04rem;
+      color: #e9eef9;
+      margin-bottom: 18px;
+    }
+
+    .author {
+      color: var(--gold-2);
+      font-weight: 700;
+    }
+
+    details.faq-item {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      padding: 18px 20px;
+    }
+
+    details summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: "+";
+      color: var(--gold-2);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    details[open] summary::after { content: "–"; }
+
+    details p {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 24px;
+    }
+
+    .contact-options {
+      display: grid;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .contact-option {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+    }
+
+    .contact-option span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: #dde6f8;
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: rgba(240,197,107,0.65);
+      box-shadow: 0 0 0 4px rgba(217,164,65,0.13);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    footer {
+      padding: 34px 0 32px;
+      border-top: 1px solid var(--line);
+      background: rgba(5,10,19,0.72);
+    }
+
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--white); }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-socials a {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(240,197,107,0.24);
+      background: rgba(255,255,255,0.04);
+      color: var(--gold-2);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-socials a:hover {
+      transform: translateY(-2px);
+      background: rgba(217,164,65,0.12);
+      border-color: rgba(240,197,107,0.48);
+      color: var(--white);
+    }
+
+    .footer-socials svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .footer-bottom {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-panel,
+      .contact-panel,
+      .grid-2,
+      .footer-grid { grid-template-columns: 1fr; }
+      .grid-4,
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .grid-steps { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 760px) {
+      :root { --nav-h: 72px; }
+      .container { width: min(var(--max), calc(100% - 1.2rem)); }
+      .section { padding: 72px 0; }
+      .hero { padding-top: 40px; }
+      .nav {
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+      .nav-toggle { display: inline-flex; }
+      .nav-right {
+        display: grid;
+        gap: 12px;
+        justify-items: end;
+      }
+      .nav-links {
+        display: none;
+        width: min(320px, 100vw - 2rem);
+        padding: 14px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(6, 13, 24, 0.96);
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 6px 4px; }
+      .hero-copy h1 { max-width: 100%; }
+      .grid-4,
+      .grid-3,
+      .grid-steps,
+      .stats-grid { grid-template-columns: 1fr; }
+      .card, .hero-card { padding: 22px; }
+      .footer-bottom { flex-direction: column; }
+      .footer-grid { justify-content: center; }
+      .footer-brand, .footer-socials { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Forgenest Digital home">
+        <img class="brand-logo" src="data:image/jpeg;base64,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" alt="Forgenest Digital logo" />
+      </a>
+      <div class="nav-right">
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+        <nav class="nav-links" id="navLinks">
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#why-choose-us">Why Choose Us</a>
+          <a href="#process">How It Works</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a class="nav-cta" href="#contact">Get a Free Quote</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Professional websites for small businesses</div>
+          <h1>Professional websites for small businesses — without the stress, confusion, or agency price tag</h1>
+          <p class="subheadline">Based in Europe and working globally, Forgenest Digital helps small business owners launch clean, modern websites and Shopify stores with domain setup, hosting, design, and support included.</p>
+          <div class="body">
+            <p>If you know your business needs a proper website but don’t know where to start, you’re not alone.</p>
+            <p>We start every project with a free Google Meet call to understand your vision, your business, and what you need the website to do.</p>
+            <p>From websites to full Shopify stores — including product setup, Facebook Business Manager, Facebook Page, and Instagram connection — we handle everything so you don’t have to.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-secondary" href="#portfolio">See Our Work</a>
+            <a class="btn btn-primary" href="#contact">Get a Free Quote</a>
+          </div>
+          <div class="hero-note">Affordable websites for small businesses in Portugal and beyond</div>
+        </div>
+        <aside class="hero-visual">
+          <svg viewBox="0 0 800 600" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="border-radius: 28px; box-shadow: var(--shadow); background: linear-gradient(135deg, rgba(16,29,54,0.95), rgba(10,18,34,0.95)); border: 1px solid rgba(255,255,255,0.09);">
+            <defs>
+              <linearGradient id="screen-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="rgba(217, 164, 65, 0.15)" />
+                <stop offset="100%" stop-color="rgba(82, 119, 201, 0.1)" />
+              </linearGradient>
+              <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#d9a441" />
+                <stop offset="100%" stop-color="#f0c56b" />
+              </linearGradient>
+            </defs>
+            <!-- Background Elements -->
+            <circle cx="650" cy="150" r="250" fill="rgba(217, 164, 65, 0.05)" />
+            <circle cx="150" cy="450" r="200" fill="rgba(82, 119, 201, 0.05)" />
+            <!-- Desk -->
+            <path d="M 0 520 L 800 520 L 800 600 L 0 600 Z" fill="#0b1426" />
+            <path d="M 0 520 L 800 520 L 800 535 L 0 535 Z" fill="#101d36" />
+            
+            <!-- Monitor -->
+            <rect x="200" y="150" width="400" height="250" rx="12" fill="#080e1a" stroke="#1d2b4d" stroke-width="4"/>
+            <rect x="215" y="165" width="370" height="220" rx="6" fill="url(#screen-glow)"/>
+            <rect x="215" y="165" width="370" height="220" rx="6" fill="#0d1830"/>
+            <!-- Monitor Stand -->
+            <path d="M 370 400 L 430 400 L 440 500 L 360 500 Z" fill="#1d2b4d" />
+            <rect x="320" y="490" width="160" height="10" rx="5" fill="#2a3c66" />
+            
+            <!-- Code on Screen -->
+            <rect x="235" y="190" width="180" height="8" rx="4" fill="#354e85"/>
+            <rect x="235" y="210" width="120" height="8" rx="4" fill="#d9a441"/>
+            <rect x="255" y="230" width="220" height="8" rx="4" fill="#758fcc"/>
+            <rect x="255" y="250" width="160" height="8" rx="4" fill="#758fcc"/>
+            <rect x="275" y="270" width="190" height="8" rx="4" fill="#758fcc"/>
+            <rect x="235" y="290" width="140" height="8" rx="4" fill="#f0c56b"/>
+            <rect x="235" y="310" width="90" height="8" rx="4" fill="#354e85"/>
+            
+            <!-- Human / Coder (Stylized Silhouette) -->
+            <path d="M 520 600 C 520 480 480 410 400 410 C 320 410 280 480 280 600 Z" fill="#1a2b54" />
+            <path d="M 500 600 C 500 500 460 430 400 430 C 340 430 300 500 300 600 Z" fill="#24386b" />
+            <!-- Head / Hoodie -->
+            <circle cx="400" cy="350" r="55" fill="#1a2b54" />
+            <circle cx="400" cy="355" r="45" fill="#24386b" />
+            
+            <!-- Plant -->
+            <rect x="120" y="440" width="40" height="80" rx="6" fill="#152445" />
+            <path d="M 120 440 Q 140 400 160 440" fill="none" stroke="#d9a441" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 140 440 Q 150 410 170 430" fill="none" stroke="#758fcc" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 110 450 Q 130 420 140 450" fill="none" stroke="#d9a441" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </aside>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value">3+ websites built</div>
+            <div class="stat-label">Real client and example projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">24-hour response time</div>
+            <div class="stat-label">Friendly and reliable communication</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Mobile-friendly design</div>
+            <div class="stat-label">Built to work across phones, tablets, and desktop</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Support after launch</div>
+            <div class="stat-label">Ongoing help available when needed</div>
+          </div>
+        </div>
+        <p class="trust-line">Simple, reliable website help for business owners who don’t want to deal with the technical side alone.</p>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Services</div>
+          <h2>Two focused services to help businesses launch and grow online</h2>
+          <p>Forgenest Digital focuses on the two things most business owners need most: a professional website that builds trust, or a Shopify store connected properly with Meta so it is ready for traffic and conversions.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card package">
+            <span class="tag" style="background: rgba(217,164,65,0.2);">E-Commerce Growth</span>
+            <h3>Shopify & Meta Setup</h3>
+            <p>For product-based businesses that want a clean Shopify store with the right social commerce foundation from day one.</p>
+            <ul>
+              <li>Full Shopify store built from scratch</li>
+              <li>Meta Business Manager connection</li>
+              <li>Facebook Page + Instagram account linked</li>
+              <li>Meta Ads management — highly effective for shop conversions</li>
+              <li>Product listings, payment gateway, and theme setup</li>
+              <li>Optional ongoing store management</li>
+            </ul>
+            <a class="btn btn-primary package-cta" href="#contact">Get Started</a>
+          </article>
+          <article class="card package">
+            <span class="tag">Small Business Websites</span>
+            <h3>Professional Websites for Small Businesses</h3>
+            <p>For service businesses, local brands, rentals, portfolios, and growing companies that need a website customers can trust.</p>
+            <ul>
+              <li>Custom-built website tailored to your business</li>
+              <li>Mobile responsive, fast, and SEO-friendly</li>
+              <li>Booking forms, contact forms, Google Maps, and WhatsApp button</li>
+              <li>Social media links + Google Analytics</li>
+              <li>Delivered ready to go live</li>
+            </ul>
+            <a class="btn btn-secondary package-cta" href="#contact">Get Started</a>
+          </article>
+        </div>
+        <div class="card" style="margin-top:22px;">
+          <p>Not sure which service fits your business? <strong>Book the free Google Meet consultation and Eugene will recommend the best route based on your goals.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Portfolio</div>
+          <h2>Recent work and example projects</h2>
+          <p>Here are a few examples of the kinds of websites we can build for small businesses. Each project is designed to look professional, feel easy to use, and help the business make a strong first impression online.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card portfolio-card">
+            <div class="portfolio-media">
+              <span class="portfolio-label">Real client project</span>
+              <strong>Koala Keys Car Hire</strong>
+              <span>Darwin, Australia</span>
+            </div>
+            <p>A professional website for an independent car hire business, designed to showcase available vehicles, build trust with customers, and make it easier for people to enquire and book.</p>
+            <ul class="bullet-list">
+              <li>Full custom landing page</li>
+              <li>Service-based layout</li>
+              <li>Vehicle showcase section</li>
+              <li>Contact and booking flow</li>
+              <li>Mobile-friendly design</li>
+              <li>Clear call-to-action sections</li>
+            </ul>
+            <p><strong>Outcome:</strong> A more professional online presence for a local business that needed a clear, trustworthy website customers could use easily</p>
+            <div class="portfolio-actions">
+              <a href="https://koalakeyscarhire.com.au" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </article>
+          <article class="card portfolio-card">
+            <div class="portfolio-media">
+              <span class="portfolio-label">Shopify e-commerce store</span>
+              <strong>90sStryke</strong>
+              <span>Portugal + EU</span>
+              <a class="btn btn-primary" href="https://90sstryke.shop" target="_blank" rel="noopener noreferrer" style="align-self:flex-start; margin-top:12px; position:relative; z-index:1;">View Store →</a>
+            </div>
+            <p>A bold 90s-inspired activewear and gym accessories dropshipping store targeting Portugal and the EU. Built on Shopify with CJ Dropshipping integration.</p>
+            <ul class="bullet-list">
+              <li>Shopify storefront setup</li>
+              <li>Dropshipping product structure</li>
+              <li>Activewear and gym accessories positioning</li>
+              <li>Portugal and EU customer focus</li>
+              <li>Bold 90s-inspired brand direction</li>
+              <li>CJ Dropshipping integration</li>
+            </ul>
+            <p><strong>Outcome:</strong> A branded Shopify store ready to showcase products, support supplier fulfilment, and sell to fitness-focused customers across Portugal and the EU.</p>
+            <div class="portfolio-actions">
+              <a href="https://90sstryke.shop" target="_blank" rel="noopener noreferrer">View Store →</a>
+            </div>
+          </article>
+        </div>
+        <p style="margin: 22px 0 0; color: rgba(183,194,217,0.72); font-style: italic; text-align: center;">✦ More projects on the way</p>
+      </div>
+    </section>
+
+    <section class="section" id="why-choose-us">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Why Choose Us</div>
+          <h2>Why small businesses choose Forgenest Digital</h2>
+          <p>Getting a website built shouldn’t feel overwhelming. Many small business owners know they need a better online presence, but they’re put off by confusing tech, unclear pricing, or agencies that feel too expensive and impersonal.</p>
+        </div>
+        <div class="card" style="margin-bottom:22px;">
+          <p>At Forgenest Digital, the goal is to make the process easier.</p>
+        </div>
+        <div class="grid-3 why-grid">
+          <article class="card">
+            <h3>Friendly, personal service</h3>
+            <p>You work directly with Eugene, not a big team where things get passed around.</p>
+          </article>
+          <article class="card">
+            <h3>Designed for small business budgets</h3>
+            <p>Professional websites at affordable rates, without the inflated agency pricing.</p>
+          </article>
+          <article class="card">
+            <h3>Clear and simple communication</h3>
+            <p>Everything is explained in a straightforward way, so you always know what’s happening.</p>
+          </article>
+          <article class="card">
+            <h3>Help with the technical side</h3>
+            <p>Domain setup, hosting, website structure, and launch support can all be handled for you.</p>
+          </article>
+          <article class="card">
+            <h3>Modern tools, practical results</h3>
+            <p>AI tools are used to work more efficiently, speed up delivery, and help create better outcomes for clients.</p>
+          </article>
+          <article class="card">
+            <h3>Built to look trustworthy</h3>
+            <p>The focus isn’t just on making a website “look nice” — it’s about helping your business look credible and ready for customers.</p>
+          </article>
+        </div>
+        <div class="card" style="margin-top:22px;">
+          <p>If you want a website that feels professional but the process has felt confusing or intimidating, Forgenest Digital is here to make it simple.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">How We Work</div>
+          <h2>Remote website and Shopify support from Europe, for businesses anywhere</h2>
+          <p>Eugene works remotely from Europe and is available to help any business type, anywhere in the world — service businesses, rentals, portfolios, online stores, local brands, and growing side hustles.</p>
+        </div>
+        <div class="grid-steps">
+          <article class="card process-step">
+            <div class="step-number">1</div>
+            <h3>Free Google Meet call</h3>
+            <p>Every project starts with a free Google Meet consultation to understand your business, goals, budget, timeline, and the kind of website or store you need.</p>
+          </article>
+          <article class="card process-step">
+            <div class="step-number">2</div>
+            <h3>Clear plan and quote</h3>
+            <p>You’ll get a simple recommendation for the best setup — a landing page, business website, full custom site, or Shopify e-commerce store.</p>
+          </article>
+          <article class="card process-step">
+            <div class="step-number">3</div>
+            <h3>Built from scratch</h3>
+            <p>Your website is built from scratch around your requirements, brand, pages, services, customer journey, and the actions you want visitors to take.</p>
+          </article>
+          <article class="card process-step">
+            <div class="step-number">4</div>
+            <h3>Shopify setup if needed</h3>
+            <p>For e-commerce, Shopify setup can include store creation, product listings, payment gateway setup, Facebook Business Manager, Facebook Page, and Instagram connection.</p>
+          </article>
+          <article class="card process-step">
+            <div class="step-number">5</div>
+            <h3>Handover or management</h3>
+            <p>Once approved, the site or store can be handed over with guidance, or we can provide ongoing store management and support if you’d rather not handle it alone.</p>
+          </article>
+        </div>
+        <div class="card" style="margin-top:22px;">
+          <p><strong>Based in Europe, working globally.</strong> From websites to full Shopify stores, Forgenest Digital handles the technical setup so you can focus on running your business.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">About Forgenest Digital</div>
+          <h2>We build websites and Shopify stores that work as hard as your business does.</h2>
+          <p>Forgenest Digital is a remote digital agency based in Europe, working with businesses and entrepreneurs across the world.</p>
+        </div>
+        <div class="about-panel">
+          <div class="about-photo">
+            <div class="location">Remote, fast, and globally available</div>
+            <h3>Built around your goals, not a generic template</h3>
+            <p>From a single landing page to a fully connected Shopify store with Meta ads, we handle the tech so you can focus on what you do best.</p>
+          </div>
+          <article class="card">
+            <p><strong>We help businesses launch professional websites, Shopify stores, and conversion-focused Meta campaigns without the technical overwhelm.</strong></p>
+            <p>Every project starts with a free Google Meet consultation to understand your goals, your customers, and what success looks like for you. From there, we shape the structure, design, integrations, and launch plan around what your business actually needs.</p>
+            <p>We don’t use one-size-fits-all templates. Every website and store is built to fit the brand, the offer, and the customer journey — whether that means a clean service website, a booking-focused local business site, or a Shopify store connected with Meta Business tools.</p>
+            <ul class="bullet-list">
+              <li>Professional websites for small businesses</li>
+              <li>Shopify stores with full Meta Business integration</li>
+              <li>Meta Ads management for real conversions</li>
+              <li>Remote, fast, and globally available</li>
+            </ul>
+            <p><strong>You run the business. We build the digital foundation that helps it grow.</strong></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Testimonials</div>
+          <h2>What clients say</h2>
+          <p class="testimonial-note">Client feedback will be added here as more projects are completed. If you’d like to see examples of previous work, feel free to get in touch.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <p class="quote">“[Eugene was easy to work with, explained everything clearly, and helped us get a website that looked much more professional.]”</p>
+            <div class="author">[Client Name]</div>
+            <p>[Business Name]</p>
+          </article>
+          <article class="card">
+            <p class="quote">“[The whole process felt simple and stress-free. We needed a website but didn’t know where to start, and Forgenest Digital made it easy.]”</p>
+            <div class="author">[Client Name]</div>
+            <p>[Business Name]</p>
+          </article>
+          <article class="card">
+            <p class="quote">“[Affordable, responsive, and very helpful throughout the project. We’re really happy with the final result.]”</p>
+            <div class="author">[Client Name]</div>
+            <p>[Business Name]</p>
+          </article>
+        </div>
+        <div class="card" style="margin-top:22px;">
+          <h3>How to collect real testimonials</h3>
+          <p>After each finished project, Eugene should ask the client: “Thanks again for working with me. If you’re happy with the website, would you mind sending me 2–4 sentences about your experience? It would really help my small business.”</p>
+          <p>Ask them to comment briefly on: what problem they had before, what working together was like, what they liked about the final site, and whether they’d recommend him.</p>
+          <p>Best practice: get permission to use name + business name, add photo/logo if allowed, and keep them short and natural.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">FAQ</div>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>How much does a website cost?</summary><p>The cost depends on the size of the website and what you need included. Smaller websites cost less, while larger or more customised projects cost more. If you get in touch, I can recommend the most suitable option and give you a clear quote.</p></details>
+          <details class="faq-item"><summary>How long does it take to build a website?</summary><p>Most small business websites can be completed within a reasonable timeframe depending on the project scope, content readiness, and revisions. If you need something urgent, let me know and I’ll tell you what’s possible.</p></details>
+          <details class="faq-item"><summary>I’m not good with technology — can you still help me?</summary><p>Yes, absolutely. Many clients come in feeling unsure about the technical side. I keep things simple, explain everything clearly, and help with the parts that usually feel confusing.</p></details>
+          <details class="faq-item"><summary>Do you help with domain names and hosting?</summary><p>Yes. I can help you choose a domain, connect it properly, and guide you through hosting setup so everything is ready to launch smoothly.</p></details>
+          <details class="faq-item"><summary>Can you redesign my existing website?</summary><p>Yes. If your current website looks outdated, feels unclear, or no longer represents your business properly, I can help improve or rebuild it.</p></details>
+          <details class="faq-item"><summary>Will my website work on mobile phones?</summary><p>Yes. All websites are built to work well across mobile, tablet, and desktop devices.</p></details>
+          <details class="faq-item"><summary>Can I request changes before the website goes live?</summary><p>Yes. Revisions are part of the process, so you’ll be able to review the site and request reasonable changes before launch.</p></details>
+          <details class="faq-item"><summary>What kind of businesses do you work with?</summary><p>I mainly help small businesses, freelancers, and service-based businesses that need a clean, professional online presence.</p></details>
+          <details class="faq-item"><summary>Do you offer support after the website is launched?</summary><p>Yes. Ongoing support can be provided depending on what you need, whether that’s updates, guidance, or help with hosting and maintenance.</p></details>
+          <details class="faq-item"><summary>How do I get started?</summary><p>The easiest way is to send a message through the contact form or by email. Tell me a little about your business and what you need, and I’ll get back to you with the next steps.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-panel">
+        <div>
+          <div class="section-heading">
+            <div class="eyebrow">Contact / CTA</div>
+            <h2>Ready to get your website sorted?</h2>
+            <p>If you’ve been meaning to get a proper website for your business but haven’t known where to start, this is a good place to begin.</p>
+          </div>
+          <div class="card">
+            <p>Whether you need a brand new site, a redesign, or help with domain and hosting setup, Forgenest Digital can guide you through the process in a simple, friendly, and affordable way.</p>
+            <p>No pressure. No confusing jargon. Just clear help to get your business online professionally.</p>
+            <div class="contact-options">
+              <div class="contact-option"><span>Email</span><a href="mailto:mreugene233@gmail.com">mreugene233@gmail.com</a></div>
+              <div class="contact-option"><span>Phone / WhatsApp</span><a href="https://wa.me/351963516036?text=Hi%20Forgenest%20Digital!%20I%27d%20like%20to%20discuss%20a%20website%20project%20%F0%9F%92%BB">+351 963 516 036</a></div>
+              <div class="contact-option"><span>Location</span>Lisbon, Portugal</div>
+              <div class="contact-option"><span>Response time</span>Usually within 24 hours</div>
+            </div>
+          </div>
+        </div>
+        <article class="card">
+          <h3>Request a Free Quote</h3>
+          <form action="mailto:mreugene233@gmail.com" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="your@email.com" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" placeholder="Tell me a little about your business and what kind of website you need." required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+          <p class="form-note">Not sure exactly what you need yet? That’s completely fine — just send a quick message and I’ll help you figure it out.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" aria-label="Forgenest Digital home">
+            <img class="footer-logo" src="data:image/jpeg;base64,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" alt="Forgenest Digital logo" />
+          </a>
+        </div>
+        <div class="footer-socials" aria-label="Forgenest Digital social links">
+          <a href="https://www.instagram.com/pope.st.eugene/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 4.2A3.8 3.8 0 1 1 12 15.8 3.8 3.8 0 0 1 12 8.2Zm0 2A1.8 1.8 0 1 0 12 13.8 1.8 1.8 0 0 0 12 10.2ZM17.7 6.1a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/eugene-tenakwah-9aa449207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v11H3V10Zm6 0h3.8v1.5h.05c.53-.95 1.84-1.95 3.78-1.95 4.04 0 4.79 2.66 4.79 6.12V21h-4v-4.72c0-1.13-.02-2.58-1.57-2.58-1.58 0-1.82 1.23-1.82 2.5V21H9V10Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/tenakwah/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.87.24-1.46 1.5-1.46h1.7V5a22 22 0 0 0-2.5-.13c-2.48 0-4.18 1.51-4.18 4.29V11H7.2v3h2.82v8h3.48Z"/></svg>
+          </a>
+          <a href="https://wa.me/351963516036?text=Hi%20Forgenest%20Digital!%20I%27d%20like%20to%20discuss%20a%20website%20project%20%F0%9F%92%BB" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.16 1.6 5.97L.05 24l6.25-1.64a11.9 11.9 0 0 0 5.78 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.18-1.24-6.17-3.5-8.42ZM12.09 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.9 9.9 0 1 1 8.35 4.61Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Forgenest Digital. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
