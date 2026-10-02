@@ -170,36 +170,79 @@
     }
 
     .hero {
-      padding: 78px 0 48px;
+      position: relative;
+      padding: 96px 0 62px;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      left: -80px;
+      background: radial-gradient(circle, rgba(217,164,65,0.18), transparent 68%);
+    }
+
+    .hero::after {
+      width: 480px;
+      height: 480px;
+      right: -120px;
+      top: -40px;
+      background: radial-gradient(circle, rgba(82,119,201,0.2), transparent 70%);
     }
 
     .hero-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+      gap: 42px;
       align-items: center;
     }
 
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero-copy h1 {
-      margin: 0 0 20px;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 0.96;
-      letter-spacing: -0.05em;
-      max-width: 12ch;
+      margin: 0 0 22px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      max-width: 11ch;
+      text-wrap: balance;
     }
 
     .hero-copy .subheadline {
-      margin: 0 0 18px;
-      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-      color: #dbe3f3;
-      max-width: 58ch;
+      margin: 0 0 22px;
+      font-size: clamp(1.12rem, 2.3vw, 1.42rem);
+      line-height: 1.55;
+      color: #e8eefb;
+      max-width: 56ch;
     }
 
     .hero-copy .body {
-      color: var(--muted);
-      font-size: 1.03rem;
-      max-width: 62ch;
-      margin-bottom: 28px;
+      color: #c6d2e8;
+      font-size: 1.05rem;
+      max-width: 60ch;
+      margin-bottom: 30px;
+    }
+
+    .hero-copy .body p {
+      margin: 0 0 12px;
+    }
+
+    .hero-copy .body p:last-child {
+      margin-bottom: 0;
     }
 
     .cta-row {
@@ -266,41 +309,64 @@
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(16,29,54,0.92), rgba(10,18,34,0.92));
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(16,29,54,0.95), rgba(8,17,31,0.94));
+      border: 1px solid rgba(240,197,107,0.16);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 34px 72px rgba(0,0,0,0.34);
       position: relative;
       overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent 42%);
+      pointer-events: none;
     }
 
     .hero-card::after {
       content: "";
       position: absolute;
       inset: auto -50px -70px auto;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(217,164,65,0.25), transparent 60%);
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(217,164,65,0.28), transparent 60%);
       pointer-events: none;
     }
 
     .hero-card .mini-label {
+      position: relative;
+      z-index: 1;
       color: var(--gold-2);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 12px;
+      letter-spacing: 0.18em;
+      margin-bottom: 14px;
+      display: inline-block;
     }
 
     .hero-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.65rem;
+      position: relative;
+      z-index: 1;
+      margin: 0 0 14px;
+      font-size: 1.72rem;
+      line-height: 1.15;
+    }
+
+    .hero-card p,
+    .hero-card ul,
+    .hero-card .hero-note,
+    .hero-card .hero-badges {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-card p {
       margin: 0 0 20px;
-      color: var(--muted);
+      color: #d6e1f4;
     }
 
     .hero-list {
@@ -498,6 +564,19 @@
 
     .why-grid .card {
       height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(240,197,107,0.1);
+    }
+
+    .why-grid .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--white);
+    }
+
+    .why-grid .card p {
+      margin: 0;
+      color: #d1dbee;
     }
 
     .process-step {
@@ -831,10 +910,10 @@
               Hire Me on Fiverr
             </a>
           </div>
-          <div class="hero-note">Affordable websites for small businesses in Portugal and beyond</div>
+          <div class="hero-note">Built for small businesses in Portugal and beyond that want to look sharper, sell better, and launch with confidence</div>
         </div>
         <aside class="hero-visual">
-          <svg viewBox="0 0 800 600" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="border-radius: 28px; box-shadow: var(--shadow); background: linear-gradient(135deg, rgba(16,29,54,0.95), rgba(10,18,34,0.95)); border: 1px solid rgba(255,255,255,0.09);">
+          <svg viewBox="0 0 800 600" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="border-radius: 32px; box-shadow: 0 34px 72px rgba(0,0,0,0.34); background: linear-gradient(135deg, rgba(16,29,54,0.98), rgba(8,17,31,0.96)); border: 1px solid rgba(240,197,107,0.14); backdrop-filter: blur(10px);">
             <defs>
               <linearGradient id="screen-glow" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="rgba(217, 164, 65, 0.15)" />
@@ -1062,40 +1141,40 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">Why Choose Us</div>
-          <h2>Why small businesses choose Forgenest Digital</h2>
-          <p>Getting a website built shouldn’t feel overwhelming. Many small business owners know they need a better online presence, but they’re put off by confusing tech, unclear pricing, or agencies that feel too expensive and impersonal.</p>
+          <h2>Why founders choose Forgenest when they want something sharper than a typical small-business site</h2>
+          <p>Forgenest Digital is built for businesses that want more than a cheap website and less friction than a traditional agency. The focus is on credible positioning, conversion-aware structure, and launch-ready execution.</p>
         </div>
         <div class="card" style="margin-bottom:22px;">
-          <p>At Forgenest Digital, the goal is to make the process easier.</p>
+          <p><strong>Forgenest is not positioned as “just someone who can build a website.”</strong> It is positioned as a founder-friendly digital partner that can make a business look stronger online, set up the right technical foundation, and help the end result feel commercially serious.</p>
         </div>
         <div class="grid-3 why-grid">
           <article class="card">
-            <h3>Friendly, personal service</h3>
-            <p>You work directly with Eugene, not a big team where things get passed around.</p>
+            <h3>Premium-looking output without agency drag</h3>
+            <p>You get a polished, modern end result that feels stronger than a budget freelancer build — without the slow process, bloated pricing, or layers of handoff that come with many agencies.</p>
           </article>
           <article class="card">
-            <h3>Designed for small business budgets</h3>
-            <p>Professional websites at affordable rates, without the inflated agency pricing.</p>
+            <h3>Built around trust, conversion, and business clarity</h3>
+            <p>The work is shaped around what helps customers trust you, understand the offer quickly, and take action — not just around filling pages with generic design.</p>
           </article>
           <article class="card">
-            <h3>Clear and simple communication</h3>
-            <p>Everything is explained in a straightforward way, so you always know what’s happening.</p>
+            <h3>Capability that goes beyond brochure websites</h3>
+            <p>With projects like AfroMkt and TixWave in the portfolio, Forgenest shows it can support stores, payment flows, live data, and platform-style product builds when the business needs more than a simple site.</p>
           </article>
           <article class="card">
-            <h3>Help with the technical side</h3>
-            <p>Domain setup, hosting, website structure, and launch support can all be handled for you.</p>
+            <h3>Direct founder-level collaboration</h3>
+            <p>You work directly with Eugene from the first call to launch. That means faster decisions, clearer communication, and less of the disconnect that happens when projects are passed between teams.</p>
           </article>
           <article class="card">
-            <h3>Modern tools, practical results</h3>
-            <p>AI tools are used to work more efficiently, speed up delivery, and help create better outcomes for clients.</p>
+            <h3>Better technical handling without making it your problem</h3>
+            <p>Structure, setup, launch details, integrations, and platform choices are handled with care, so the business gets a stronger digital foundation without the owner needing to manage the technical complexity alone.</p>
           </article>
           <article class="card">
-            <h3>Built to look trustworthy</h3>
-            <p>The focus isn’t just on making a website “look nice” — it’s about helping your business look credible and ready for customers.</p>
+            <h3>Designed to support growth after launch</h3>
+            <p>The goal is not to hand over a static site and disappear. Forgenest builds with the next step in mind — enquiries, sales, store growth, platform expansion, and future support.</p>
           </article>
         </div>
         <div class="card" style="margin-top:22px;">
-          <p>If you want a website that feels professional but the process has felt confusing or intimidating, Forgenest Digital is here to make it simple.</p>
+          <p><strong>If your business needs to look more established, sell more confidently, or launch something more ambitious online, Forgenest Digital is designed to give you a stronger first impression and a stronger foundation behind it.</strong></p>
         </div>
       </div>
     </section>
