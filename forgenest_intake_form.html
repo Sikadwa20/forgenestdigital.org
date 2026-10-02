@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgenest Digital | Client Intake Form</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="forgenest-logo-final.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: rgba(24, 24, 24, 0.9);
+      --panel-border: rgba(255, 215, 102, 0.18);
+      --text: #f8f5ef;
+      --muted: #b6b1a5;
+      --gold: #f4c95d;
+      --gold-strong: #ffcf52;
+      --gold-soft: rgba(244, 201, 93, 0.18);
+      --input: rgba(255,255,255,0.04);
+      --success-bg: rgba(39, 70, 46, 0.55);
+      --success-border: rgba(120, 211, 135, 0.35);
+      --success-text: #dcffe3;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(244, 201, 93, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 207, 82, 0.08), transparent 22%),
+        linear-gradient(160deg, #050505 0%, #0d0d0d 45%, #111111 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .form-logo {
+      height: 56px;
+      width: auto;
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 5px;
+      box-shadow: 0 16px 30px rgba(0,0,0,0.22);
+    }
+
+    .gold-text {
+      background: linear-gradient(135deg, #fff0b8 0%, #f4c95d 40%, #d8a83a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(27,27,27,0.95) 0%, rgba(18,18,18,0.88) 100%);
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
+    }
+
+    .field,
+    .choice-card {
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .field:focus,
+    .choice-card:hover {
+      border-color: rgba(244, 201, 93, 0.5);
+      box-shadow: 0 0 0 4px rgba(244, 201, 93, 0.08);
+      outline: none;
+    }
+
+    .choice-card:hover {
+      transform: translateY(-1px);
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      accent-color: var(--gold-strong);
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #ffe08a 0%, #f4c95d 42%, #dba93b 100%);
+      color: #111111;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      box-shadow: 0 20px 35px rgba(244, 201, 93, 0.2);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 24px 40px rgba(244, 201, 93, 0.28);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="min-h-screen px-4 py-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <section class="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 px-6 py-10 shadow-2xl sm:px-10 lg:px-12">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(244,201,93,0.14),_transparent_28%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.05),_transparent_25%)]"></div>
+        <div class="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <a href="forgenest_index.html#top" class="mb-6 inline-flex items-center" aria-label="Forgenest Digital home">
+              <img class="form-logo" src="data:image/jpeg;base64,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" alt="Forgenest Digital logo" />
+            </a>
+            <h1 class="max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
+              Professional website planning starts with a
+              <span class="gold-text">clear brief</span>.
+            </h1>
+            <p class="mt-5 max-w-2xl text-base leading-7 text-stone-300 sm:text-lg">
+              Tell Eugene about your business, goals, style, and must-have features. This intake form helps turn your ideas into a polished website proposal faster.
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-yellow-300/10 bg-black/25 p-4">
+                <p class="text-sm font-semibold text-yellow-200">Tailored recommendation</p>
+                <p class="mt-2 text-sm text-stone-400">Get the right package and scope based on your real needs.</p>
+              </div>
+              <div class="rounded-2xl border border-yellow-300/10 bg-black/25 p-4">
+                <p class="text-sm font-semibold text-yellow-200">Faster turnaround</p>
+                <p class="mt-2 text-sm text-stone-400">Clear answers help move your project from inquiry to build without delays.</p>
+              </div>
+              <div class="rounded-2xl border border-yellow-300/10 bg-black/25 p-4">
+                <p class="text-sm font-semibold text-yellow-200">Professional planning</p>
+                <p class="mt-2 text-sm text-stone-400">Brand, pages, features, and timeline are all captured in one place.</p>
+              </div>
+            </div>
+          </div>
+          <div class="glass rounded-[28px] p-6 sm:p-8">
+            <div class="space-y-4">
+              <p class="text-sm uppercase tracking-[0.3em] text-yellow-200/80">Client onboarding</p>
+              <h2 class="text-2xl font-bold text-white">Let’s map out your website properly</h2>
+              <p class="text-sm leading-6 text-stone-400">Complete this short intake form and Eugene will review your project details, preferred package, pages, and features before following up.</p>
+            </div>
+            <div class="mt-6 grid gap-3 text-sm text-stone-300 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p class="font-semibold text-yellow-100">Ideal for</p>
+                <p class="mt-1 text-stone-400">New businesses, redesigns, service brands, rentals, portfolios, and online shops.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p class="font-semibold text-yellow-100">Response time</p>
+                <p class="mt-1 text-stone-400">You’ll receive a personal follow-up within 24 hours after submission.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-8 glass rounded-[32px] px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+        <div id="successMessage" class="mb-6 hidden rounded-2xl border px-5 py-4" style="background: var(--success-bg); border-color: var(--success-border); color: var(--success-text);">
+          <p class="text-base font-semibold">Thanks! Eugene will be in touch within 24 hours. 🚀</p>
+        </div>
+
+        <form id="intakeForm" class="space-y-10" novalidate>
+          <input type="hidden" name="_subject" value="New Forgenest Client Inquiry" />
+          <input type="hidden" name="_replyto" id="replyToField" value="" />
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Business details</h3>
+                <p class="mt-1 text-sm text-stone-400">Basic information so Eugene knows who to contact and what you do.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 1</span>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Full Name</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="full_name" required placeholder="Your full name" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Business Name</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="business_name" required placeholder="Your business name" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Email Address</span>
+                <input id="emailField" class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="email" name="email" required placeholder="you@example.com" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Phone / WhatsApp Number</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="tel" name="phone_whatsapp" placeholder="+351 ..." />
+              </label>
+              <label class="block md:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Website (if you have one already)</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="url" name="website" placeholder="https://yourwebsite.com" />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Project scope</h3>
+                <p class="mt-1 text-sm text-stone-400">Choose the website type, package, content needs, and preferred deadline.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 2</span>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">What type of website do you need?</span>
+                <select class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white" name="website_type" required>
+                  <option value="">Select an option</option>
+                  <option>Landing Page</option>
+                  <option>Business Website</option>
+                  <option>Booking/Rental Site</option>
+                  <option>Portfolio</option>
+                  <option>Shopify / E-commerce Store</option>
+                  <option>E-commerce</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Which package are you interested in?</span>
+                <select class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white" name="package_interest" required>
+                  <option value="">Select a package</option>
+                  <option>Starter €299</option>
+                  <option>Business €599</option>
+                  <option>Premium €999</option>
+                  <option>Shopify Store Setup from €799</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+              <fieldset class="md:col-span-2">
+                <legend class="mb-3 block text-sm font-medium text-stone-200">Would you like a free Google Meet consultation first?</legend>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="google_meet_consultation" value="Yes" />
+                    <span>Yes, I’d like a free Google Meet call first</span>
+                  </label>
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="google_meet_consultation" value="No" />
+                    <span>No, please send me details by email first</span>
+                  </label>
+                </div>
+              </fieldset>
+              <label class="block md:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Briefly describe your business and what you do</span>
+                <textarea class="field min-h-[120px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" name="business_description" required placeholder="Tell us about your products, services, and what makes your business unique."></textarea>
+              </label>
+              <label class="block md:col-span-2">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Who are your target customers?</span>
+                <textarea class="field min-h-[110px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" name="target_customers" placeholder="Who are you trying to reach? Local clients, tourists, startups, families, specific industries, etc."></textarea>
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">What is your deadline / when do you need this done?</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="deadline" placeholder="e.g. In 2 weeks / Before 15 October" />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Brand and design</h3>
+                <p class="mt-1 text-sm text-stone-400">Share your existing brand assets and the style direction you want.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 3</span>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <fieldset class="md:col-span-2">
+                <legend class="mb-3 block text-sm font-medium text-stone-200">Do you have a logo?</legend>
+                <div class="grid gap-3 sm:grid-cols-3">
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="logo_status" value="Yes" />
+                    <span>Yes</span>
+                  </label>
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="logo_status" value="No" />
+                    <span>No</span>
+                  </label>
+                  <label class="choice-card flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-stone-200">
+                    <input type="radio" name="logo_status" value="Need one" />
+                    <span>Need one</span>
+                  </label>
+                </div>
+              </fieldset>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Do you have brand colours or a style in mind?</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="brand_style" placeholder="e.g. Luxury black and gold, modern, playful, minimal" />
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Any websites you like the look of?</span>
+                <input class="field w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" type="text" name="inspiration_sites" placeholder="Add links or brand names for inspiration" />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Pages and features</h3>
+                <p class="mt-1 text-sm text-stone-400">Select what your website should include so the proposal is aligned from the start.</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 4</span>
+            </div>
+            <div class="grid gap-5 lg:grid-cols-2">
+              <fieldset>
+                <legend class="mb-3 block text-sm font-medium text-stone-200">What pages do you need?</legend>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Home" /><span>Home</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="About" /><span>About</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Services" /><span>Services</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Booking/Contact" /><span>Booking/Contact</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="Gallery" /><span>Gallery</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="pages_needed" value="FAQ" /><span>FAQ</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:col-span-2"><input type="checkbox" name="pages_needed" value="Other" /><span>Other</span></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend class="mb-3 block text-sm font-medium text-stone-200">Any special features needed?</legend>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="WhatsApp button" /><span>WhatsApp button</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Booking form" /><span>Booking form</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Google Maps" /><span>Google Maps</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Online payment" /><span>Online payment</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Photo gallery" /><span>Photo gallery</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"><input type="checkbox" name="special_features" value="Blog" /><span>Blog</span></label>
+                  <label class="choice-card flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:col-span-2"><input type="checkbox" name="special_features" value="Other" /><span>Other</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-5 flex items-center justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Final notes</h3>
+                <p class="mt-1 text-sm text-stone-400">Anything else Eugene should know before reaching out?</p>
+              </div>
+              <span class="hidden rounded-full border border-yellow-300/20 bg-yellow-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-yellow-200 sm:inline-flex">Section 5</span>
+            </div>
+            <div class="grid gap-5">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-stone-200">Any other notes or questions?</span>
+                <textarea class="field min-h-[140px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-stone-500" name="notes_questions" placeholder="Share anything important about your goals, content, launch plans, or questions for Eugene."></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p class="max-w-xl text-sm leading-6 text-stone-400">By submitting this form, your project details will be sent directly to Forgenest Digital so Eugene can review your inquiry and follow up with the best next steps.</p>
+            <button id="submitButton" type="submit" class="submit-btn inline-flex items-center justify-center rounded-2xl px-7 py-4 text-base font-bold tracking-wide">
+              Send Intake Form
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('intakeForm');
+    const emailField = document.getElementById('emailField');
+    const replyToField = document.getElementById('replyToField');
+    const submitButton = document.getElementById('submitButton');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      replyToField.value = emailField.value.trim();
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      successMessage.classList.add('hidden');
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch('https://formspree.io/f/mkjnpvdj', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Form submission failed.');
+        }
+
+        form.reset();
+        replyToField.value = '';
+        successMessage.classList.remove('hidden');
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('Sorry — something went wrong while sending your form. Please try again in a moment.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Intake Form';
+      }
+    });
+  </script>
+</body>
+</html>

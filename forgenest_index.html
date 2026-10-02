@@ -170,36 +170,79 @@
     }
 
     .hero {
-      padding: 78px 0 48px;
+      position: relative;
+      padding: 96px 0 62px;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      left: -80px;
+      background: radial-gradient(circle, rgba(217,164,65,0.18), transparent 68%);
+    }
+
+    .hero::after {
+      width: 480px;
+      height: 480px;
+      right: -120px;
+      top: -40px;
+      background: radial-gradient(circle, rgba(82,119,201,0.2), transparent 70%);
     }
 
     .hero-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+      gap: 42px;
       align-items: center;
     }
 
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero-copy h1 {
-      margin: 0 0 20px;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 0.96;
-      letter-spacing: -0.05em;
-      max-width: 12ch;
+      margin: 0 0 22px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      max-width: 11ch;
+      text-wrap: balance;
     }
 
     .hero-copy .subheadline {
-      margin: 0 0 18px;
-      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-      color: #dbe3f3;
-      max-width: 58ch;
+      margin: 0 0 22px;
+      font-size: clamp(1.12rem, 2.3vw, 1.42rem);
+      line-height: 1.55;
+      color: #e8eefb;
+      max-width: 56ch;
     }
 
     .hero-copy .body {
-      color: var(--muted);
-      font-size: 1.03rem;
-      max-width: 62ch;
-      margin-bottom: 28px;
+      color: #c6d2e8;
+      font-size: 1.05rem;
+      max-width: 60ch;
+      margin-bottom: 30px;
+    }
+
+    .hero-copy .body p {
+      margin: 0 0 12px;
+    }
+
+    .hero-copy .body p:last-child {
+      margin-bottom: 0;
     }
 
     .cta-row {
@@ -266,41 +309,64 @@
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(16,29,54,0.92), rgba(10,18,34,0.92));
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(16,29,54,0.95), rgba(8,17,31,0.94));
+      border: 1px solid rgba(240,197,107,0.16);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 34px 72px rgba(0,0,0,0.34);
       position: relative;
       overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent 42%);
+      pointer-events: none;
     }
 
     .hero-card::after {
       content: "";
       position: absolute;
       inset: auto -50px -70px auto;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(217,164,65,0.25), transparent 60%);
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(217,164,65,0.28), transparent 60%);
       pointer-events: none;
     }
 
     .hero-card .mini-label {
+      position: relative;
+      z-index: 1;
       color: var(--gold-2);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 12px;
+      letter-spacing: 0.18em;
+      margin-bottom: 14px;
+      display: inline-block;
     }
 
     .hero-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.65rem;
+      position: relative;
+      z-index: 1;
+      margin: 0 0 14px;
+      font-size: 1.72rem;
+      line-height: 1.15;
+    }
+
+    .hero-card p,
+    .hero-card ul,
+    .hero-card .hero-note,
+    .hero-card .hero-badges {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-card p {
       margin: 0 0 20px;
-      color: var(--muted);
+      color: #d6e1f4;
     }
 
     .hero-list {
@@ -498,6 +564,19 @@
 
     .why-grid .card {
       height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(240,197,107,0.1);
+    }
+
+    .why-grid .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--white);
+    }
+
+    .why-grid .card p {
+      margin: 0;
+      color: #d1dbee;
     }
 
     .process-step {
@@ -811,13 +890,13 @@
     <section class="hero section">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Professional websites for small businesses</div>
-          <h1>Professional websites for small businesses — without the stress, confusion, or agency price tag</h1>
-          <p class="subheadline">Based in Europe and working globally, Forgenest Digital helps small business owners launch clean, modern websites and Shopify stores with domain setup, hosting, design, and support included.</p>
+          <div class="eyebrow">Websites, stores, and digital platforms for ambitious small businesses</div>
+          <h1>Forgenest Digital builds the kind of online presence that makes small businesses look established, trustworthy, and ready to grow</h1>
+          <p class="subheadline">From high-converting business websites to Shopify stores and more advanced platform builds, Forgenest Digital helps founders launch with sharper design, clearer structure, and the right technical setup behind the scenes.</p>
           <div class="body">
-            <p>If you know your business needs a proper website but don’t know where to start, you’re not alone.</p>
-            <p>We start every project with a free Google Meet call to understand your vision, your business, and what you need the website to do.</p>
-            <p>From websites to full Shopify stores — including product setup, Facebook Business Manager, Facebook Page, and Instagram connection — we handle everything so you don’t have to.</p>
+            <p>If your business has outgrown a basic online presence — or still needs one done properly — this is built for you.</p>
+            <p>Every project starts with a free Google Meet call so Eugene can understand your business, your offer, and what the site needs to achieve.</p>
+            <p>From brochure sites and booking flows to Shopify, marketplaces, and event-tech builds, Forgenest Digital handles the design, setup, and launch work that makes a business feel credible online.</p>
           </div>
           <div class="cta-row">
             <a class="btn btn-secondary" href="#portfolio">See Our Work</a>
@@ -831,10 +910,10 @@
               Hire Me on Fiverr
             </a>
           </div>
-          <div class="hero-note">Affordable websites for small businesses in Portugal and beyond</div>
+          <div class="hero-note">Built for small businesses in Portugal and beyond that want to look sharper, sell better, and launch with confidence</div>
         </div>
         <aside class="hero-visual">
-          <svg viewBox="0 0 800 600" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="border-radius: 28px; box-shadow: var(--shadow); background: linear-gradient(135deg, rgba(16,29,54,0.95), rgba(10,18,34,0.95)); border: 1px solid rgba(255,255,255,0.09);">
+          <svg viewBox="0 0 800 600" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="border-radius: 32px; box-shadow: 0 34px 72px rgba(0,0,0,0.34); background: linear-gradient(135deg, rgba(16,29,54,0.98), rgba(8,17,31,0.96)); border: 1px solid rgba(240,197,107,0.14); backdrop-filter: blur(10px);">
             <defs>
               <linearGradient id="screen-glow" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="rgba(217, 164, 65, 0.15)" />
@@ -890,23 +969,23 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-value">3+ websites built</div>
-            <div class="stat-label">Real client and example projects</div>
+            <div class="stat-value">5+ live projects built</div>
+            <div class="stat-label">Client sites, e-commerce builds, and digital platforms</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value">24-hour response time</div>
-            <div class="stat-label">Friendly and reliable communication</div>
+            <div class="stat-value">AfroMkt + TixWave</div>
+            <div class="stat-label">Marketplace and event-tech projects that prove platform capability</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value">Mobile-friendly design</div>
-            <div class="stat-label">Built to work across phones, tablets, and desktop</div>
+            <div class="stat-value">Shopify + Supabase + Stripe</div>
+            <div class="stat-label">Modern tools used across stores, platforms, payments, and live data flows</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value">Support after launch</div>
-            <div class="stat-label">Ongoing help available when needed</div>
+            <div class="stat-value">24-hour response + support</div>
+            <div class="stat-label">Fast communication, mobile-friendly delivery, and help after launch</div>
           </div>
         </div>
-        <p class="trust-line">Simple, reliable website help for business owners who don’t want to deal with the technical side alone.</p>
+        <p class="trust-line">Proof-driven digital builds for founders who want more than just a nice-looking site.</p>
       </div>
     </section>
 
@@ -914,40 +993,49 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">Services</div>
-          <h2>Two focused services to help businesses launch and grow online</h2>
-          <p>Forgenest Digital focuses on the two things most business owners need most: a professional website that builds trust, or a Shopify store connected properly with Meta so it is ready for traffic and conversions.</p>
+          <h2>Three clear packages built around the result your business needs</h2>
+          <p>Forgenest Digital packages its work around business outcomes — credibility, enquiries, sales, and launch readiness — so you are not left trying to piece together a long list of technical tasks.</p>
         </div>
-        <div class="grid-2">
+        <div class="grid-3">
           <article class="card package">
-            <span class="tag" style="background: rgba(217,164,65,0.2);">E-Commerce Growth</span>
-            <h3>Shopify & Meta Setup</h3>
-            <p>For product-based businesses that want a clean Shopify store with the right social commerce foundation from day one.</p>
+            <span class="tag">Credibility Package</span>
+            <h3>Business Website Launch</h3>
+            <p>For service businesses, rentals, consultants, and local brands that need a polished website customers can trust from the first click.</p>
             <ul>
-              <li>Full Shopify store built from scratch</li>
-              <li>Meta Business Manager connection</li>
-              <li>Facebook Page + Instagram account linked</li>
-              <li>Meta Ads management — highly effective for shop conversions</li>
-              <li>Product listings, payment gateway, and theme setup</li>
-              <li>Optional ongoing store management</li>
+              <li>Custom website structure built around your offer</li>
+              <li>Mobile-friendly design, contact flow, and enquiry CTA setup</li>
+              <li>Google Maps, WhatsApp, forms, and key business pages included</li>
+              <li>Launch-ready delivery with guidance and support after go-live</li>
             </ul>
-            <a class="btn btn-primary package-cta" href="#contact">Get Started</a>
+            <a class="btn btn-secondary package-cta" href="#contact">Book a Free Call</a>
           </article>
           <article class="card package">
-            <span class="tag">Small Business Websites</span>
-            <h3>Professional Websites for Small Businesses</h3>
-            <p>For service businesses, local brands, rentals, portfolios, and growing companies that need a website customers can trust.</p>
+            <span class="tag" style="background: rgba(217,164,65,0.2);">Conversion Package</span>
+            <h3>Shopify Store Growth Setup</h3>
+            <p>For product-based businesses that need more than a store theme — they need a clean buying journey, connected sales channels, and a proper launch foundation.</p>
             <ul>
-              <li>Custom-built website tailored to your business</li>
-              <li>Mobile responsive, fast, and SEO-friendly</li>
-              <li>Booking forms, contact forms, Google Maps, and WhatsApp button</li>
-              <li>Social media links + Google Analytics</li>
-              <li>Delivered ready to go live</li>
+              <li>Shopify store built and structured for real product sales</li>
+              <li>Product, payment, and collection setup done properly from day one</li>
+              <li>Meta Business Manager, Facebook Page, and Instagram connected</li>
+              <li>Optional Meta Ads and ongoing store support for growth</li>
             </ul>
-            <a class="btn btn-secondary package-cta" href="#contact">Get Started</a>
+            <a class="btn btn-primary package-cta" href="#contact">Start Your Store</a>
+          </article>
+          <article class="card package">
+            <span class="tag">Platform Build</span>
+            <h3>Custom Marketplace or Product Platform</h3>
+            <p>For founders building something more advanced — a marketplace, event platform, booking flow, or digital product experience that needs stronger logic and integrations behind it.</p>
+            <ul>
+              <li>Best-fit stack planning for your product idea and launch phase</li>
+              <li>Front-end experience paired with payments, live data, or user flows</li>
+              <li>Ideal for marketplace, ticketing, and platform-style business models</li>
+              <li>Project scope shaped in a consultation before build begins</li>
+            </ul>
+            <a class="btn btn-secondary package-cta" href="#contact">Discuss Your Build</a>
           </article>
         </div>
         <div class="card" style="margin-top:22px;">
-          <p>Not sure which service fits your business? <strong>Book the free Google Meet consultation and Eugene will recommend the best route based on your goals.</strong></p>
+          <p>Not sure which package fits your business? <strong>Book the free Google Meet consultation and Eugene will recommend the best route based on your goals, budget, and how advanced the build needs to be.</strong></p>
         </div>
       </div>
     </section>
@@ -956,8 +1044,8 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">Portfolio</div>
-          <h2>Recent work and example projects</h2>
-          <p>Here are a few examples of the kinds of websites we can build for small businesses. Each project is designed to look professional, feel easy to use, and help the business make a strong first impression online.</p>
+          <h2>Recent work that proves Forgenest can build more than brochure websites</h2>
+          <p>From client service websites to Shopify stores, marketplaces, and ticketing platforms, these projects show the range of what Forgenest Digital can design, structure, and launch.</p>
         </div>
         <div class="grid-2">
           <article class="card portfolio-card">
@@ -1001,8 +1089,51 @@
               <a href="https://90sstryke.shop" target="_blank" rel="noopener noreferrer">View Store →</a>
             </div>
           </article>
+          <article class="card portfolio-card">
+            <div class="portfolio-media">
+              <span class="portfolio-label">Marketplace platform</span>
+              <strong>AfroMkt</strong>
+              <span>Portugal + Europe diaspora</span>
+              <a class="btn btn-primary" href="https://afro-mkt.com" target="_blank" rel="noopener noreferrer" style="align-self:flex-start; margin-top:12px; position:relative; z-index:1;">View Marketplace →</a>
+            </div>
+            <p>Africa's Global Marketplace — a full-stack marketplace platform helping African sellers reach diaspora customers across Portugal and Europe through one modern storefront.</p>
+            <ul class="bullet-list">
+              <li>Full-stack marketplace architecture</li>
+              <li>Supabase backend with live product data</li>
+              <li>Stripe subscription and checkout flows</li>
+              <li>Resend email and Edge Functions automation</li>
+              <li>Dynamic product shop and seller onboarding</li>
+              <li>Built to scale across Europe-facing diaspora markets</li>
+            </ul>
+            <p><strong>Outcome:</strong> A live marketplace foundation that positions AfroMkt as a scalable commerce platform, not just a simple brochure website.</p>
+            <div class="portfolio-actions">
+              <a href="https://afro-mkt.com" target="_blank" rel="noopener noreferrer">View Marketplace</a>
+            </div>
+          </article>
+          <article class="card portfolio-card">
+            <div class="portfolio-media">
+              <span class="portfolio-label">Event tech platform</span>
+              <strong>TixWave</strong>
+              <span>Ticketing + QR entry</span>
+              <a class="btn btn-primary" href="https://tixwave.party" target="_blank" rel="noopener noreferrer" style="align-self:flex-start; margin-top:12px; position:relative; z-index:1;">View Platform →</a>
+            </div>
+            <p>An event ticketing platform for nightlife and live events, built with secure online checkout, QR-based ticket delivery, and tools for promoters to manage sales and entry.</p>
+            <ul class="bullet-list">
+              <li>Supabase-powered event and ticket data</li>
+              <li>Stripe checkout and webhook flows</li>
+              <li>QR ticket generation and mobile scanner support</li>
+              <li>Buyer login, wallet, and checkout success journey</li>
+              <li>Admin tools for event, order, and commission management</li>
+              <li>Designed for global nightlife and live event organisers</li>
+            </ul>
+            <p><strong>Outcome:</strong> A more advanced product build that shows Forgenest Digital can handle real platform logic, payments, and event operations — not just brochure sites.</p>
+            <div class="portfolio-actions">
+              <a href="https://tixwave.party" target="_blank" rel="noopener noreferrer">View Platform</a>
+              <a href="https://github.com/Sikadwa20/tixwave" target="_blank" rel="noopener noreferrer">View Repo</a>
+            </div>
+          </article>
         </div>
-        <p style="margin: 22px 0 0; color: rgba(183,194,217,0.72); font-style: italic; text-align: center;">✦ More projects on the way</p>
+        <p style="margin: 22px 0 0; color: rgba(183,194,217,0.72); font-style: italic; text-align: center;">More client and product work available on request.</p>
       </div>
     </section>
 
@@ -1010,40 +1141,40 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">Why Choose Us</div>
-          <h2>Why small businesses choose Forgenest Digital</h2>
-          <p>Getting a website built shouldn’t feel overwhelming. Many small business owners know they need a better online presence, but they’re put off by confusing tech, unclear pricing, or agencies that feel too expensive and impersonal.</p>
+          <h2>Why founders choose Forgenest when they want something sharper than a typical small-business site</h2>
+          <p>Forgenest Digital is built for businesses that want more than a cheap website and less friction than a traditional agency. The focus is on credible positioning, conversion-aware structure, and launch-ready execution.</p>
         </div>
         <div class="card" style="margin-bottom:22px;">
-          <p>At Forgenest Digital, the goal is to make the process easier.</p>
+          <p><strong>Forgenest is not positioned as “just someone who can build a website.”</strong> It is positioned as a founder-friendly digital partner that can make a business look stronger online, set up the right technical foundation, and help the end result feel commercially serious.</p>
         </div>
         <div class="grid-3 why-grid">
           <article class="card">
-            <h3>Friendly, personal service</h3>
-            <p>You work directly with Eugene, not a big team where things get passed around.</p>
+            <h3>Premium-looking output without agency drag</h3>
+            <p>You get a polished, modern end result that feels stronger than a budget freelancer build — without the slow process, bloated pricing, or layers of handoff that come with many agencies.</p>
           </article>
           <article class="card">
-            <h3>Designed for small business budgets</h3>
-            <p>Professional websites at affordable rates, without the inflated agency pricing.</p>
+            <h3>Built around trust, conversion, and business clarity</h3>
+            <p>The work is shaped around what helps customers trust you, understand the offer quickly, and take action — not just around filling pages with generic design.</p>
           </article>
           <article class="card">
-            <h3>Clear and simple communication</h3>
-            <p>Everything is explained in a straightforward way, so you always know what’s happening.</p>
+            <h3>Capability that goes beyond brochure websites</h3>
+            <p>With projects like AfroMkt and TixWave in the portfolio, Forgenest shows it can support stores, payment flows, live data, and platform-style product builds when the business needs more than a simple site.</p>
           </article>
           <article class="card">
-            <h3>Help with the technical side</h3>
-            <p>Domain setup, hosting, website structure, and launch support can all be handled for you.</p>
+            <h3>Direct founder-level collaboration</h3>
+            <p>You work directly with Eugene from the first call to launch. That means faster decisions, clearer communication, and less of the disconnect that happens when projects are passed between teams.</p>
           </article>
           <article class="card">
-            <h3>Modern tools, practical results</h3>
-            <p>AI tools are used to work more efficiently, speed up delivery, and help create better outcomes for clients.</p>
+            <h3>Better technical handling without making it your problem</h3>
+            <p>Structure, setup, launch details, integrations, and platform choices are handled with care, so the business gets a stronger digital foundation without the owner needing to manage the technical complexity alone.</p>
           </article>
           <article class="card">
-            <h3>Built to look trustworthy</h3>
-            <p>The focus isn’t just on making a website “look nice” — it’s about helping your business look credible and ready for customers.</p>
+            <h3>Designed to support growth after launch</h3>
+            <p>The goal is not to hand over a static site and disappear. Forgenest builds with the next step in mind — enquiries, sales, store growth, platform expansion, and future support.</p>
           </article>
         </div>
         <div class="card" style="margin-top:22px;">
-          <p>If you want a website that feels professional but the process has felt confusing or intimidating, Forgenest Digital is here to make it simple.</p>
+          <p><strong>If your business needs to look more established, sell more confidently, or launch something more ambitious online, Forgenest Digital is designed to give you a stronger first impression and a stronger foundation behind it.</strong></p>
         </div>
       </div>
     </section>
@@ -1121,31 +1252,48 @@
       <div class="container">
         <div class="section-heading">
           <div class="eyebrow">Testimonials</div>
-          <h2>What clients say</h2>
-          <p class="testimonial-note">Client feedback will be added here as more projects are completed. If you’d like to see examples of previous work, feel free to get in touch.</p>
+          <h2>Trust signals Eugene can swap for real client feedback</h2>
+          <p class="testimonial-note">These are <strong>placeholder testimonial examples</strong> written in the right tone and format for the site. Replace each one with real client feedback as projects are completed.</p>
+        </div>
+        <div class="stats-grid" style="margin-bottom:22px;">
+          <div class="stat-card">
+            <div class="stat-value">Placeholder-ready quotes</div>
+            <div class="stat-label">Structured so real testimonials can be dropped in quickly without redesigning the section</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Portfolio-backed proof</div>
+            <div class="stat-label">Koala Keys, 90sStryke, AfroMkt, and TixWave now reinforce the trust story</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Founder-led communication</div>
+            <div class="stat-label">Direct contact with Eugene, clear process, and consultation-first delivery</div>
+          </div>
         </div>
         <div class="grid-3">
           <article class="card">
-            <p class="quote">“[Eugene was easy to work with, explained everything clearly, and helped us get a website that looked much more professional.]”</p>
-            <div class="author">[Client Name]</div>
-            <p>[Business Name]</p>
+            <p class="quote">“[Placeholder] Eugene made the whole process feel clear from the first call. We needed a site that looked more established and helped customers trust us faster, and that’s exactly what Forgenest delivered.”</p>
+            <div class="author">[Placeholder Client Name]</div>
+            <p>[Placeholder Business Name — service business]</p>
           </article>
           <article class="card">
-            <p class="quote">“[The whole process felt simple and stress-free. We needed a website but didn’t know where to start, and Forgenest Digital made it easy.]”</p>
-            <div class="author">[Client Name]</div>
-            <p>[Business Name]</p>
+            <p class="quote">“[Placeholder] What stood out was that this was not just about making the site look nice. Eugene thought about the structure, the customer journey, and what needed to happen for the business to actually get enquiries and sales.”</p>
+            <div class="author">[Placeholder Client Name]</div>
+            <p>[Placeholder Business Name — e-commerce or brand]</p>
           </article>
           <article class="card">
-            <p class="quote">“[Affordable, responsive, and very helpful throughout the project. We’re really happy with the final result.]”</p>
-            <div class="author">[Client Name]</div>
-            <p>[Business Name]</p>
+            <p class="quote">“[Placeholder] Responsive, professional, and very easy to work with. Forgenest felt more hands-on than a big agency, but the end result still looked polished and high quality.”</p>
+            <div class="author">[Placeholder Client Name]</div>
+            <p>[Placeholder Business Name — local business or startup]</p>
           </article>
         </div>
         <div class="card" style="margin-top:22px;">
           <h3>How to collect real testimonials</h3>
-          <p>After each finished project, Eugene should ask the client: “Thanks again for working with me. If you’re happy with the website, would you mind sending me 2–4 sentences about your experience? It would really help my small business.”</p>
-          <p>Ask them to comment briefly on: what problem they had before, what working together was like, what they liked about the final site, and whether they’d recommend him.</p>
-          <p>Best practice: get permission to use name + business name, add photo/logo if allowed, and keep them short and natural.</p>
+          <ul class="bullet-list">
+            <li>Ask each client for 2-4 sentences on communication, result, and overall experience</li>
+            <li>Capture name + business name + city or industry where possible</li>
+            <li>Prioritise quotes that mention trust, ease, speed, and business impact</li>
+            <li>Swap these placeholders out one by one as real feedback comes in</li>
+          </ul>
         </div>
       </div>
     </section>
