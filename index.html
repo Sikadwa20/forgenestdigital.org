@@ -863,6 +863,31 @@
       .footer-grid { justify-content: center; }
       .footer-brand, .footer-socials { justify-content: center; }
     }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 52px 0 34px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2rem, 8.4vw, 2.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+        margin-bottom: 18px;
+      }
+
+      .hero-copy .subheadline {
+        margin-bottom: 18px;
+      }
+
+      .hero-copy .body {
+        margin-bottom: 24px;
+      }
+
+      .hero-grid {
+        gap: 28px;
+      }
+    }
   </style>
 </head>
 <body>
